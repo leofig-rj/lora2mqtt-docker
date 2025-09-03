@@ -29,9 +29,9 @@ docker run --rm \
 
 ### Via Docker Compose
 
+```bash
 version: '3.8'
 
-```bash
 services:
   lora2mqtt:
     image: leonardo/lora2mqtt
@@ -72,13 +72,13 @@ services:
 /dev/ttyUSB0: acesso à porta serial LoRa
 
 🛠️ Requisitos
-Docker instalado
-Acesso à porta serial (/dev/ttyUSB0)
+- Docker instalado
+- - Acesso à porta serial (/dev/ttyUSB0)
 Broker MQTT acessível
 
 🤝 Contribuições
-Pull requests são bem-vindos! Para sugestões, melhorias ou correções, abra uma issue ou entre em contato.
+- Pull requests são bem-vindos! Para sugestões, melhorias ou correções, abra uma issue ou entre em contato.
 
 📄 Licença
-Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+- Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
