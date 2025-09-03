@@ -142,7 +142,7 @@ docker buildx inspect --bootstrap
 
 docker login
 
-docker buildx build --platform linux/amd64,linux/arm64 -t leofig/lora2mqtt:multiarch --push .
+docker buildx build --platform linux/amd64,linux/arm64 -t leofig/lora2mqtt:latest --push .
 
 ```
 
