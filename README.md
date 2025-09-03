@@ -25,11 +25,13 @@ docker run --rm \
   -e LOG_LEVEL=INFO \
   -v /dev/ttyUSB0:/dev/ttyUSB0 \
   leofig/lora2mqtt
+```
 
 ### Via Docker Compose
 
 version: '3.8'
 
+```bash
 services:
   lora2mqtt:
     image: leonardo/lora2mqtt
@@ -50,17 +52,20 @@ services:
     volumes:
       - ./config:/config
     restart: unless-stopped
+```
 
 ⚙️ Variáveis de ambiente
-Variável	Descrição	Valor padrão
-MQTT_HOST	Endereço do broker MQTT	—
-MQTT_PORT	Porta do broker MQTT	1883
-MQTT_USER	Usuário MQTT	—
-MQTT_PASS	Senha MQTT	—
-NET_ID	ID da rede LoRa	0x00
-FREQUENCY	Frequência LoRa (433E6, 868E6, 915E6)	915E6
-LOG_LEVEL	Nível de log (DEBUG, INFO, WARNING, ERROR)	INFO
-SYNCH_WORD	Palavra de sincronização LoRa	34
+
+| Variável     | Descrição                                           | Valor padrão |
+|--------------|-----------------------------------------------------|--------------|
+| MQTT_HOST    | Endereço do broker MQTT                             | —            |
+| MQTT_PORT    | Porta do broker MQTT                                | 1883         |
+| MQTT_USER    | Usuário MQTT                                        | —            |
+| MQTT_PASS    | Senha MQTT                                          | —            |
+| NET_ID       | ID da rede LoRa                                     | 0x00         |
+| FREQUENCY    | Frequência LoRa (433E6, 868E6, 915E6)               | 915E6        |
+| LOG_LEVEL    | Nível de log (DEBUG, INFO, WARNING, ERROR)          | INFO         |
+| SYNCH_WORD   | Palavra de sincronização LoRa                       | 34           |
 
 📁 Volumes
 /config: pasta para persistência de dados e configurações
