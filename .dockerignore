@@ -2,3 +2,4 @@
 .gitattributes
 README.md
 LICENSE
+.DS_Store

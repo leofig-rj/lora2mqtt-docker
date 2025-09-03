@@ -8,13 +8,13 @@ COPY run.sh ./
 COPY bridge.py ./
 
 # Copia os módulos que estão na raiz
+COPY __init__.py ./
 COPY consts.py ./
 COPY devs.py ./
 COPY funcs.py ./
 COPY globals.py ./
 COPY lflora.py ./
 COPY msgs.py ./
-COPY utils.py ./
 
 # Copia os diretórios de apoio
 COPY config/ ./config/
