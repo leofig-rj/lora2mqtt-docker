@@ -92,7 +92,7 @@ Existem exemplos para uma primeira experiência com o par dispositivo / LoRa2MQT
 
 O Exemplo [LF_LoRa_USB_Adapter_01][ex_usb] é para gravar um adaptador USB para ser conectado ao hospedeiro do container e permitir a conexão via LoRa com os dispositivos.
 
-Cada exemplo em Arduino (.ion) contém um arquivo de configuração LoRa2MQTT correspondente (.py). O par .ino / .py de cada exemplo serve de base para desenvolvimento de novos dispositivos.
+Cada exemplo em Arduino (.ino) contém um arquivo de configuração LoRa2MQTT correspondente (.py). O par .ino / .py de cada exemplo serve de base para desenvolvimento de novos dispositivos.
 
 Os exemplos:
 
@@ -116,9 +116,21 @@ Para parear o dispositivo no LoRa2MQTT:
 - Desative o "Modo Pareamento" no "LoRa2MQTT Bridge".
 - Um novo dispositivo deve aparecer na tela do "LoRa2MQTT Bridge" dentro de "Dispositivos Conectados".
 
-### Note
+Nota:
 
-Os arquivos de configuração dos exemplos já estão inclidos no LoRa2MQTT. Novos arquivos deverão ser colocados em "/home/user/lora2mqtt/config/models" ou outra pasta que tenha sido utilizada no Docker Compose.
+Os arquivos de configuração dos exemplos já estão incluidos no LoRa2MQTT. Novos arquivos deverão ser colocados em "/home/user/lora2mqtt/config/models" ou outra pasta que tenha sido utilizada no Docker Compose.
+
+## Criar nova imagem
+
+Caso queira criar sua própria imagem:
+
+- Copiar a pasta "lora2mqtt" para sua máquina e dela comandar:
+
+```bash
+docker build -t leofig/lora2mqtt .
+
+```
+
 
 🤝 Contribuições
 - Pull requests são bem-vindos! Para sugestões, melhorias ou correções, abra uma issue ou entre em contato.
