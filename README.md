@@ -13,7 +13,7 @@ Este container conecta dispositivos LoRa à rede MQTT, permitindo automações e
 
 Disponível em: [Docker Hub - leonardo/lora2mqtt](https://hub.docker.com/r/leofig/lora2mqtt)
 
-## 🚀 Como usar
+## 🚀 Como instalar
 
 ### Via linha de comando
 
@@ -75,22 +75,22 @@ services:
 - /config: pasta para persistência de dados e configurações, em /home/user/lora2mqtt/config
 
 🔌 Dispositivos
-- /dev/ttyUSB0: acesso à porta serial LoRa
+- /dev/ttyUSB0: acesso à porta serial com o adaptador USB LoRa.
 
 🛠️ Requisitos
-- Docker instalado
-- Acesso à porta serial (/dev/ttyUSB0)
-- Broker MQTT acessível
+- Docker instalado.
+- Acesso à porta serial (/dev/ttyUSB0).
+- Broker MQTT acessível.
 
 ## 🏠 Acesso no Home Assistant
 
 Uma vez iniciado o container, sem erros, aparecerá dentro da integração MQTT o dispositivo "LoRa2MQTT Bridge", por onde você poderá configurar e manter os dispositivos.
 
-## 🔧 Exemplos de Dispositivos
+## 🔧 Exemplos de dispositivos
 
 Existem exemplos para uma primeira experiência com o par dispositivo / LoRa2MQTT. Eles usam a bilioteca [LF_Lora][github_LF_LoRa].
 
-O Exemplo [LF_LoRa_USB_Adapter_01][ex_usb] é para gravar um adaptador USB para ser conectado ao hospedeiro do container e permitir a conexão via LoRa com os dispositivos.
+O Exemplo [LF_LoRa_USB_Adapter_01][ex_usb] é para criar um adaptador USB LoRa, para ser conectado ao hospedeiro do container e permitir a conexão via LoRa com os dispositivos.
 
 Cada exemplo em Arduino (.ino) contém um arquivo de configuração LoRa2MQTT correspondente (.py). O par .ino / .py de cada exemplo serve de base para desenvolvimento de novos dispositivos.
 
@@ -102,10 +102,10 @@ Os exemplos:
 
 - [LF_LoRa_Model_TEST03.ino][ex_03_ino] / [test03.py][ex_03_py]
 
-## 🧪 Novos Dispositivos
+## 🧪 Novos dispositivos
 
 Novos dispositivos podem ser desenvolvidos baseados nos exemplos acima.
-O arquivo de configuração .py para LoRa2MQTT deve ser colocado na pasta "/home/user/lora2mqtt/config/models" ou outra que tenha sido utilizada no Docker Compose, para que sejam importados.
+O arquivo de configuração .py para LoRa2MQTT deve ser colocado na pasta "/home/user/lora2mqtt/config/models" ou outra que tenha sido utilizada no Docker Compose, para que sejam importados. Note que "/models" é criada automaticamente dentro de "/home/user/lora2mqtt/config", pelo container se não existir.
 
 Para parear o dispositivo no LoRa2MQTT:
 
@@ -120,7 +120,7 @@ Nota:
 
 Os arquivos de configuração dos exemplos já estão incluidos no LoRa2MQTT. Novos arquivos deverão ser colocados em "/home/user/lora2mqtt/config/models" ou outra pasta que tenha sido utilizada no Docker Compose.
 
-## 🛠️ Criar Nova Imagem
+## 🛠️ Criar nova imagem
 
 Caso queira criar sua própria imagem:
 
