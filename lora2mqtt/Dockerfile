@@ -17,7 +17,6 @@ COPY lflora.py ./
 COPY msgs.py ./
 
 # Copia os diretórios de apoio
-COPY config/ ./config/
 COPY models/ ./models/
 COPY models_import/ ./models_import/
 

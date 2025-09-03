@@ -3,6 +3,18 @@
 Integração de dispositivos LoRa com Home Assistant via MQTT.  
 Este container conecta dispositivos LoRa à rede MQTT, permitindo automações e monitoramento direto no Home Assistant ou qualquer outro cliente MQTT.
 
+
+
+Integrating your LoRa devices with Home Assistant over MQTT.
+
+Useful for making your own local LoRa infrastructure, without the need for complex structures like LoRaWan.
+
+![Project Stage][project-stage-shield]![Maintenance][maintenance-shield]
+
+<img src="https://raw.githubusercontent.com/leofig-rj/leofig-hass-addons/main/lora2mqtt/pictures/LoRa2MQTT logo.png"/>
+
+
+
 ## 📦 Imagem Docker
 
 Disponível em: [Docker Hub - leonardo/lora2mqtt](https://hub.docker.com/r/leofig/lora2mqtt)

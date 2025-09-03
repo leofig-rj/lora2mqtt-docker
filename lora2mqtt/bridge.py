@@ -31,12 +31,12 @@ def main(broker, port, broker_user, broker_pass):
     # Dados do sistema não são configuráveis por variáveis de ambiente
     # Mas serão referenciado no docker-compose.yml
     # devices:
-    #  - "/dev/ttyUSB0:/dev/ttyUSB0"
+    #  - /dev/ttyUSB0:/dev/ttyUSB0
     # volumes:
-    #  - ./config:./config
+    #  - /home/usr/lora2mqtt/config:/config
     serial_obj = "/dev/ttyUSB0"
     logging.debug(f"serial_obj: {serial_obj}")
-    data_path = "./config"
+    data_path = "/config"
     logging.debug(f"data_path: {data_path}")
 
     hex_format = r"^0x[0-9A-Fa-f]{2}$"
