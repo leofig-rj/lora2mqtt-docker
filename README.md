@@ -1,18 +1,12 @@
 # LoRa2MQTT
 
-Integração de dispositivos LoRa com Home Assistant via MQTT.  
-Este container conecta dispositivos LoRa à rede MQTT, permitindo automações e monitoramento direto no Home Assistant ou qualquer outro cliente MQTT.
-
-
-
-Integrating your LoRa devices with Home Assistant over MQTT.
-
-Useful for making your own local LoRa infrastructure, without the need for complex structures like LoRaWan.
-
 ![Project Stage][project-stage-shield]![Maintenance][maintenance-shield]
 
 <img src="https://raw.githubusercontent.com/leofig-rj/leofig-hass-addons/main/lora2mqtt/pictures/LoRa2MQTT logo.png"/>
 
+Integração de dispositivos LoRa com Home Assistant via MQTT.  
+Este container conecta dispositivos LoRa à rede MQTT, permitindo automações e monitoramento direto no Home Assistant ou qualquer outro cliente MQTT.
+Útil para fazer sua própria infraestrutura LoRa, sem a necessidade de complexas struturas como LoRaWan.
 
 
 ## 📦 Imagem Docker
@@ -69,7 +63,7 @@ services:
 
 | Variável     | Descrição                                           | Valor padrão |
 |--------------|-----------------------------------------------------|--------------|
-| MQTT_HOST    | Endereço do broker MQTT                             | —            |
+| MQTT_HOST    | Endereço do broker MQTT (do Home Assistant)         | —            |
 | MQTT_PORT    | Porta do broker MQTT                                | 1883         |
 | MQTT_USER    | Usuário MQTT                                        | —            |
 | MQTT_PASS    | Senha MQTT                                          | —            |
@@ -88,21 +82,54 @@ services:
 - Acesso à porta serial (/dev/ttyUSB0)
 - Broker MQTT acessível
 
+## Acesso no Home Assistant
+
+Uma vez iniciado o container, sem erros, aparecerá dentro da integração MQTT o dispositivo "LoRa2MQTT Bridge", por onde você poderá configurar e manter os dispositivos.
+
+## Exemplos de Dispositivos
+
+Existem exemplos para uma primeira experiência com o par dispositivo / LoRa2MQTT. Eles usam a bilioteca [LF_Lora][github_LF_LoRa].
+
+O Exemplo [LF_LoRa_USB_Adapter_01][ex_usb] é para gravar um adaptador USB para ser conectado ao hospedeiro do container e permitir a conexão via LoRa com os dispositivos.
+
+Cada exemplo em Arduino (.ion) contém um arquivo de configuração LoRa2MQTT correspondente (.py). O par .ino / .py de cada exemplo serve de base para desenvolvimento de novos dispositivos.
+
+Os exemplos:
+
+- [LF_LoRa_Model_TEST01.ino][ex_01_ino] / [test01.py][ex_01_py]
+
+- [LF_LoRa_Model_TEST02.ino][ex_02_ino] / [test02.py][ex_02_py]
+
+- [LF_LoRa_Model_TEST03.ino][ex_03_ino] / [test03.py][ex_03_py]
+
+## Novos Dispositivos
+
+Novos dispositivos podem ser desenvolvidos baseados nos exemplos acima.
+O arquivo de configuração .py para LoRa2MQTT deve ser colocado na pasta "/home/user/lora2mqtt/config/models" ou outra que tenha sido utilizada no Docker Compose, para que sejam importados.
+
+Para parear o dispositivo no LoRa2MQTT:
+
+- A primeira vez que ligar o dispositivo, ele ficará com o LED piscando indicando que está no modo pareamento (ou indicará pareamento no display se tiver).
+- Para colocar o dispositivo no modo pareamento (se ele já não estiver), pressione o botão 5 vezes ou mais.
+- No Home Assistant, vá emm "Configuração/Dispositivos & Serviços/MQTT/LoRa2MQTT Bridge" e acione o "Modo Pareamento".
+- Depois de algum tempo o LED deve parar de piscar e sensor "info" de "LoRa2MQTT Bridge" deve indicar o MAC do dispositivo conectado.
+- Desative o "Modo Pareamento" no "LoRa2MQTT Bridge".
+- Um novo dispositivo deve aparecer na tela do "LoRa2MQTT Bridge" dentro de "Dispositivos Conectados".
+
+### Note
+
+Os arquivos de configuração dos exemplos já estão inclidos no LoRa2MQTT. Novos arquivos deverão ser colocados em "/home/user/lora2mqtt/config/models" ou outra pasta que tenha sido utilizada no Docker Compose.
+
 🤝 Contribuições
 - Pull requests são bem-vindos! Para sugestões, melhorias ou correções, abra uma issue ou entre em contato.
 
 📄 Licença
 - Este projeto está sob a licença [MIT][mit]. Veja o arquivo [LICENSE][license] para mais detalhes.
 
-## License
-
-This libary is [licensed][license] under the [MIT Licence][mit].
-
 <!-- Markdown link -->
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-development%20beta-red.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
 [github_LF_LoRa]: https://github.com/leofig-rj/Arduino-LF_LoRa
-[docs_link]: https://github.com/leofig-rj/leofig-hass-addons/blob/master/lora2mqtt/DOCS.md
 [github_leofig-rj]: https://github.com/leofig-rj
 [arduino]:https://arduino.cc/
 [lora]:https://www.lora-alliance.org/
