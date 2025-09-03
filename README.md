@@ -82,11 +82,11 @@ services:
 - Acesso à porta serial (/dev/ttyUSB0)
 - Broker MQTT acessível
 
-## Acesso no Home Assistant
+## 🏠 Acesso no Home Assistant
 
 Uma vez iniciado o container, sem erros, aparecerá dentro da integração MQTT o dispositivo "LoRa2MQTT Bridge", por onde você poderá configurar e manter os dispositivos.
 
-## Exemplos de Dispositivos
+## 🔧 Exemplos de Dispositivos
 
 Existem exemplos para uma primeira experiência com o par dispositivo / LoRa2MQTT. Eles usam a bilioteca [LF_Lora][github_LF_LoRa].
 
@@ -102,7 +102,7 @@ Os exemplos:
 
 - [LF_LoRa_Model_TEST03.ino][ex_03_ino] / [test03.py][ex_03_py]
 
-## Novos Dispositivos
+## 🧪 Novos Dispositivos
 
 Novos dispositivos podem ser desenvolvidos baseados nos exemplos acima.
 O arquivo de configuração .py para LoRa2MQTT deve ser colocado na pasta "/home/user/lora2mqtt/config/models" ou outra que tenha sido utilizada no Docker Compose, para que sejam importados.
@@ -120,7 +120,7 @@ Nota:
 
 Os arquivos de configuração dos exemplos já estão incluidos no LoRa2MQTT. Novos arquivos deverão ser colocados em "/home/user/lora2mqtt/config/models" ou outra pasta que tenha sido utilizada no Docker Compose.
 
-## Criar nova imagem
+## 🛠️ Criar Nova Imagem
 
 Caso queira criar sua própria imagem:
 
