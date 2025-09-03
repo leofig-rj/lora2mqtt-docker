@@ -73,8 +73,8 @@ services:
 
 🛠️ Requisitos
 - Docker instalado
-- - Acesso à porta serial (/dev/ttyUSB0)
-Broker MQTT acessível
+- Acesso à porta serial (/dev/ttyUSB0)
+- Broker MQTT acessível
 
 🤝 Contribuições
 - Pull requests são bem-vindos! Para sugestões, melhorias ou correções, abra uma issue ou entre em contato.
