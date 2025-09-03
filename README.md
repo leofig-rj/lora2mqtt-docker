@@ -14,7 +14,7 @@ Disponível em: [Docker Hub - leonardo/lora2mqtt](https://hub.docker.com/r/leofi
 ```bash
 docker run --rm \
   --privileged \
-  --network host \
+  --network bridge \
   -v $(pwd)/config:/config \
   -e MQTT_HOST=192.168.1.100 \
   -e MQTT_PORT=1883 \
@@ -47,10 +47,10 @@ services:
       FREQUENCY: "915E6"
       LOG_LEVEL: "INFO"
     devices:
-      - "/dev/ttyUSB0:/dev/ttyUSB0"
+      - /dev/ttyUSB0:/dev/ttyUSB0
     volumes:
       - /home/user/lora2mqtt/config:/config
-    network_mode: "bridge"
+    network_mode: bridge
 ```
 
 ⚙️ Variáveis de ambiente
@@ -64,7 +64,6 @@ services:
 | NET_ID       | ID da rede LoRa                                     | 0x00         |
 | FREQUENCY    | Frequência LoRa (433E6, 868E6, 915E6)               | 915E6        |
 | LOG_LEVEL    | Nível de log (DEBUG, INFO, WARNING, ERROR)          | INFO         |
-| SYNCH_WORD   | Palavra de sincronização LoRa                       | 34           |
 
 📁 Volumes
 - /config: pasta para persistência de dados e configurações, em /home/user/lora2mqtt/config
