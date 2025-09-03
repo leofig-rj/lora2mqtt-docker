@@ -131,6 +131,21 @@ docker build -t leofig/lora2mqtt .
 
 ```
 
+- Para criar muitiplataforma:
+
+```bash
+sudo apt install -y qemu-user-static binfmt-support
+docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+
+docker buildx create --name multiarch-builder --use
+docker buildx inspect --bootstrap
+
+docker login
+
+docker buildx build --platform linux/amd64,linux/arm64 -t leofig/lora2mqtt:multiarch --push .
+
+```
+
 
 🤝 Contribuições
 - Pull requests são bem-vindos! Para sugestões, melhorias ou correções, abra uma issue ou entre em contato.
