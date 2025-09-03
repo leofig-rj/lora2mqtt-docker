@@ -36,6 +36,8 @@ services:
   lora2mqtt:
     image: leonardo/lora2mqtt
     container_name: lora2mqtt
+    restart: unless-stopped
+    privileged: true
     environment:
       MQTT_HOST: "192.168.1.100"
       MQTT_PORT: "1883"
@@ -44,14 +46,11 @@ services:
       NET_ID: "0x00"
       FREQUENCY: "915E6"
       LOG_LEVEL: "INFO"
-      SYNCH_WORD: "34"
     devices:
       - "/dev/ttyUSB0:/dev/ttyUSB0"
-    privileged: true
-    network_mode: "host"
     volumes:
-      - ./config:/config
-    restart: unless-stopped
+      - /home/user/lora2mqtt/config:/config
+    network_mode: "bridge"
 ```
 
 ⚙️ Variáveis de ambiente
@@ -68,8 +67,10 @@ services:
 | SYNCH_WORD   | Palavra de sincronização LoRa                       | 34           |
 
 📁 Volumes
-/config: pasta para persistência de dados e configurações
-/dev/ttyUSB0: acesso à porta serial LoRa
+- /config: pasta para persistência de dados e configurações, em /home/user/lora2mqtt/config
+
+🔌 Dispositivos
+- /dev/ttyUSB0: acesso à porta serial LoRa
 
 🛠️ Requisitos
 - Docker instalado
