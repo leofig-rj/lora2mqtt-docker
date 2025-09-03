@@ -92,7 +92,7 @@ services:
 - Pull requests são bem-vindos! Para sugestões, melhorias ou correções, abra uma issue ou entre em contato.
 
 📄 Licença
-- Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+- Este projeto está sob a licença [MIT][mit]. Veja o arquivo [LICENSE][license] para mais detalhes.
 
 ## License
 
