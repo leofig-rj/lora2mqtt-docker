@@ -40,7 +40,7 @@ version: '3.8'
 
 services:
   lora2mqtt:
-    image: leonardo/lora2mqtt
+    image: leofig/lora2mqtt
     container_name: lora2mqtt
     restart: unless-stopped
     privileged: true
