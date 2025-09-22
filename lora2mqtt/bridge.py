@@ -291,6 +291,7 @@ class LoRa2MQTTClient(mqtt.Client):
             "json_attr_t": "~/telemetry",
             "stat_t": "~/status",
             "dev_cla": "connectivity",
+            "ent_cat": "diagnostic",
             "pl_on": "online",
             "pl_off": "offline"
         })
@@ -313,6 +314,7 @@ class LoRa2MQTTClient(mqtt.Client):
             "json_attr_t": "~/telemetry",
             "stat_t": f"~/{slug}",
             "dev_cla": "connectivity",
+            "ent_cat": "diagnostic",
             "pl_on": "online",
             "pl_off": "offline"
         })
